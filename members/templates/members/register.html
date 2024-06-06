@@ -1,0 +1,43 @@
+
+{% extends 'base.html' %}
+{% block page_title %}
+    Register Page
+{% endblock %}
+
+{% block header_reference %}
+    <style>
+
+        form{
+  background-image: linear-gradient(to bottom, #101556, #0b3608);
+            border: 10px groove #e4ff00;
+            width: 30%;
+            margin: 0 auto;
+            padding: 10px;
+            color: azure;
+        }
+        button{
+            background-color: #420746;
+            color: white;
+            width: 100%;
+            cursor: pointer;
+        }
+
+        button:hover{
+            background-color: #1aff00;
+        }
+    </style>
+
+{% endblock %}
+
+{% block content_page %}
+    <h1 style="margin-top: 50px;">Welcome To Register Page</h1>
+    <form action="" method="post">
+        <fieldset>
+            <legend>User Register</legend>
+        {% csrf_token %}
+        {{ form_registers.as_p }}
+        </fieldset>
+        <button type="submit">Register</button>
+    </form>
+{% endblock %}
+

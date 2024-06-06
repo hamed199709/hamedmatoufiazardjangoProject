@@ -1,0 +1,20 @@
+{% load static %}
+<footer>
+    <ul>
+        <li><a href="{% url 'home' %}">Home</a></li>
+        <li><a href="{% url 'members:user-register' %}">register</a></li>
+        <li><a href="{% url 'members:user_login' %}">login</a></li>
+        <li><a href="{% url 'viewCar' %}">Buying cars</a></li>
+        <li><a href="{% url 'mysite:about_us' %}">about us</a></li>
+        <li><a href="{% url 'mysite:contact_us' %}">contact us</a></li>
+        <li><a href="{% url 'comments:comments' %}">comment</a></li>
+        <li><a href="#">Go to the top of the page</a></li>
+        <li><a href="{% url 'members:viewchangepassword' %}">change password</a></li>
+        <li><a href="{% url 'members:user_logout' %}">logout</a></li>
+    </ul>
+    <img src="{% static 'images/cadillac.png' %}" alt="american car">
+    <img src="{% static 'images/gmc.jpg' %}" alt="american car">
+    <img src="{% static 'images/chevrolet.jpg' %}" alt="american car">
+    <img src="{% static 'images/ford.jpg' %}" alt="american car">
+    <img src="{% static 'images/dodge.jpg' %}" alt="american car">
+</footer>

@@ -1,0 +1,42 @@
+{% extends 'base.html' %}
+{% load static %}
+        {% block page_title %}
+            comments
+        {% endblock %}
+
+{% block header_reference %}
+    <br>
+    <style>
+
+        form{
+            background-image: linear-gradient(to bottom, #101556, #0b3608);
+            border: 10px groove #e4ff00;
+            width: 30%;
+            margin: 0 auto;
+            padding: 10px;
+            color: azure;
+        }
+        button{
+            background-color: #420746;
+            color: white;
+            width: 100%;
+            cursor: pointer;
+        }
+
+        button:hover{
+            background-color: #1aff00;
+        }
+    </style>
+
+{% endblock %}
+
+{% block content_page %}
+
+    <form method="POST" action="{% url 'comments:comments' %}">
+        {% csrf_token %}
+        {{ form_comment.as_p }}
+        <button type="submit">Submit</button>
+    </form>
+    <br>
+{% endblock %}
+

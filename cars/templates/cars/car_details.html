@@ -1,0 +1,86 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block page_title %}
+    Car Details
+{% endblock %}
+
+{% block content_page %}
+    <h1 style="font-size: 300%; color: green; margin-top: 50px;">Welcome to Car Details</h1>
+    <img src="{{ MEDIA_URL }}{{ car_details.photo }}" alt="" class="car-image">
+
+    <table class="car-details-table">
+        <tr>
+            <th>Name</th>
+            <th>Brand</th>
+            <th>Representation</th>
+            <th>Color</th>
+            <th>Speed</th>
+            <th>Fuel Type</th>
+            <th>Zero to Hundred</th>
+            <th>Combined Fuel Consumption</th>
+            <th>Body Class</th>
+            <th>Engine Volume</th>
+            <th>Engine Power</th>
+            <th>Number of Cylinders</th>
+            <th>Price</th>
+            <th>Driver</th>
+        </tr>
+        <tr>
+            <td>{{ car_details.name }}</td>
+            <td>{{ car_details.brand.name }}</td>
+            <td>{{ car_details.representation.name }}</td>
+            <td>{{ car_details.color }}</td>
+            <td>{{ car_details.speed }}</td>
+            <td>{{ car_details.fuel_type }}</td>
+            <td>{{ car_details.zero_to_hundred }}</td>
+            <td>{{ car_details.combined_fuel_consumption }}</td>
+            <td>{{ car_details.body_class }}</td>
+            <td>{{ car_details.engine_volume }}</td>
+            <td>{{ car_details.engine_power }}</td>
+            <td>{{ car_details.number_of_cylinders }}</td>
+            <td>{{ car_details.price }}$</td>
+            <td>
+                {% for driver in car_details.driver.all %}
+                    {{ driver.name }}<br>
+                {% endfor %}
+            </td>
+        </tr>
+    </table>
+    <style>
+        .car-image {
+            max-width: 300px;
+            height: auto;
+            object-fit: cover;
+            display: block;
+            margin: 0 auto;
+        }
+
+        .car-image:hover {
+            transform: rotate(360deg) scale(2.5);
+        }
+
+
+        .car-details-table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+
+        .car-details-table th,
+        .car-details-table td {
+            padding: 10px;
+            text-align: center;
+            border: 1px solid black;
+        }
+
+        .car-details-table th {
+            background-color: #0d420a;
+            color: #e4ff00;
+        }
+
+        .car-details-table td {
+            background-color: #2d052f;
+            color: #1aff00;
+        }
+    </style>
+{% endblock %}

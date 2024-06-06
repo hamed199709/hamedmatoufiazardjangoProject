@@ -1,0 +1,107 @@
+.large-image {
+  width: 100%;
+  height: auto;
+}
+body {
+  background-image: linear-gradient(to bottom, #ffffff, #00ffea);
+            text-align: center;
+            padding-top: 60px;
+        }
+
+img {
+            width: 200px;
+            height: auto;
+            transition: transform 0.3s;
+        }
+
+.navbar-nav .nav-link:hover {
+    color: #ffffff;
+    background-color: #6700ff;
+}
+
+/* تنظیم اندازه عناوین */
+.navbar-nav .nav-link {
+    font-size: 27px;
+    color: black;
+}
+.navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  background-image: linear-gradient(to bottom, #e7ff00, #0fff00);
+  z-index: 9999;
+}
+
+footer {
+  background-image: linear-gradient(to bottom, #0c1260, #133411);
+    padding: 20px;
+    text-align: left;
+    color: #6700ff;
+    text-decoration: none;
+    display: flex;
+    justify-content: space-between;
+}
+footer:hover {
+    color: #ffff00;
+}
+footer ul li a:hover {
+    color: #0916ff;
+    background-color: #ffffff;
+}
+footer ul li a {
+  text-decoration: none;
+    color: #1aff00;
+}
+
+
+
+
+#comment-form {
+  max-width: 500px;
+  margin: 40px auto;
+  padding: 20px;
+  border: 1px solid #ccc;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+#comment-form label {
+  display: block;
+  margin-bottom: 10px;
+}
+
+#comment-form input, #comment-form textarea {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 20px;
+  border: 1px solid #ccc;
+}
+
+#comment-form button[type="submit"] {
+  background-color: #4CAF50;
+  color: #fff;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+}
+
+#comment-form button[type="submit"]:hover {
+  background-color: #3e8e41;
+}
+
+#comments > div {
+  margin-bottom: 20px;
+  padding: 20px;
+  border-bottom: 1px solid #ccc;
+}
+
+#comments > div:last-child {
+  border-bottom: none;
+}
+
+#comments > div > span {
+  font-weight: bold;
+  margin-right: 10px;
+}

@@ -1,0 +1,69 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block page_title %}
+    Cars List
+{% endblock %}
+
+{% block content_page %}
+
+    <style>
+        h1 {
+            color: #333;
+            margin-top: 50px;
+        }
+
+        .car-list {
+            list-style-type: none;
+            padding: 0;
+            margin: 0;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+        }
+
+        .car-list li {
+            flex-basis: calc(50% - 10px);
+            margin-bottom: 20px;
+        }
+
+        a {
+            text-decoration: none;
+            color: #ffffff;
+        }
+
+        a:hover {
+            text-decoration: none;
+            color: #000000;
+            background-color: #19dc7e;
+
+        }
+
+        .car-card {
+            background-color: #081f06;
+            padding: 20px;
+            border-radius: 5px;
+            box-shadow: 0 2px 5px rgb(0, 0, 0);
+            display: flex;
+            align-items: center;
+        }
+
+    </style>
+
+
+    <h1>Welcome to Cars List</h1>
+    <ul class="car-list">
+        {% for car_record in car_records %}
+        <li>
+            <div class="car-card">
+{#                <a href="{{ car_record.slug }}"><img src="{% static 'images/cars/Ford_Mustang_GT.jpg' %}" alt="{{ car_record.name }}" class="car-image"></a>#}
+{#                <a href="{{ car_record.slug }}"><img src="{% static 'images/cars/cadillac_CTS.jpg' %}" alt="{{ car_record.name }}" class="car-image"></a>#}
+                <h2><a href="{{ car_record.slug }}">{{ car_record.name }}</a></h2>
+
+            </div>
+        </li>
+
+        {% endfor %}
+    </ul>
+
+{% endblock %}
